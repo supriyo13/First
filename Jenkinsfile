@@ -4,13 +4,12 @@ pipeline{
 
        stages{
 
-           stage('one'){
+           stage('SCM checkout'){
 
 
                 steps{ 
  
-                 echo "This is the first stage"
-
+                 git 'https://github.com/supriyo13/First'
               }
 
 
@@ -18,14 +17,12 @@ pipeline{
 
 
 
-           stage('two'){
+           stage('Compile-Package'){
 
 
                 steps{ 
  
-                 echo "This is the second stage"
-
-              }
+                 sh 'mvn package'            }
 
 
            }
